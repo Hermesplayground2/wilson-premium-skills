@@ -1,0 +1,30 @@
+name: "premium-model-router"
+version: "1.0.0"
+description: "Advanced model routing with cost optimization, automatic fallback, and dead model detection. Pro: $29"
+price: 29
+type: "premium"
+requires: "hermes>=4.0"
+entry: "skill.py"
+author: "Hermesplayground2"
+license: "commercial"
+commands:
+  - name: "route"
+    description: "Route request to optimal model (cost or quality priority)"
+    pattern: "route|@jarvis route"
+  - name: "status"
+    description: "Show routing status and provider health"
+    pattern: "model status|@jarvis model status"
+  - name: "dead"
+    description: "List currently dead/retired models"
+    pattern: "model dead|@jarvis model dead"
+  - name: "refresh"
+    description: "Clear dead model cache to force re-test"
+    pattern: "model refresh|@jarvis model refresh"
+  - name: "tiers"
+    description: "Show pricing and feature tiers"
+    pattern: "model tiers|@jarvis model tiers"
+config:
+  priority: "cost"
+  force_provider: null
+  timeout: 30
+  dead_cache_hours: 24
